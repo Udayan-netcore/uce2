@@ -4,29 +4,10 @@ import TemplateTypeSelector from "@/components/template/TemplateTypeSelector";
 import TemplateEditor from "@/components/template/TemplateEditor";
 import TemplateList from "@/components/template/TemplateList";
 import { TemplateType, Template } from "@/types/whatsapp-template";
-import { createEmptyTemplate } from "@/utils/template-utils";
+import { createEmptyTemplate, SAMPLE_TEMPLATES } from "@/utils/template-utils";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-
-// Sample data for templates
-const SAMPLE_TEMPLATES: Template[] = [
-  createEmptyTemplate('text'),
-  createEmptyTemplate('media'),
-  createEmptyTemplate('carousel')
-].map((template, index) => ({
-  ...template,
-  name: `Sample Template ${index + 1}`,
-  status: index === 0 ? 'approved' : index === 1 ? 'draft' : 'rejected',
-  sections: template.sections.map(section => ({
-    ...section,
-    content: section.type === 'body' 
-      ? 'Hi {{customer_name}}, thank you for your order! Your order {{order_id}} has been confirmed and will be shipped soon.'
-      : section.type === 'header'
-      ? 'Order Confirmation'
-      : 'Thanks for shopping with us!'
-  }))
-}));
 
 // Application states
 type EditorState = 

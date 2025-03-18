@@ -6,12 +6,19 @@ export type TemplateType =
   | 'catalogue'
   | 'multi-product'
   | 'order-details'
-  | 'order-status';
+  | 'order-status'
+  | 'location'
+  | 'multi-language'
+  | 'interactive'
+  | 'sequential';
 
 export type TemplateCategory = 
   | 'marketing'
   | 'utility'
-  | 'authentication';
+  | 'authentication'
+  | 'support'
+  | 'onboarding'
+  | 'feedback';
 
 export type TemplateStatus = 
   | 'draft'
@@ -22,7 +29,10 @@ export type TemplateStatus =
 export type VariableType = 
   | 'user_attribute'
   | 'payload_param'
-  | 'product_property';
+  | 'product_property'
+  | 'event_data'
+  | 'order_data'
+  | 'location_data';
 
 export interface Variable {
   id: string;
@@ -38,6 +48,17 @@ export interface TemplateSection {
   characterLimit: number;
 }
 
+export interface CarouselItem {
+  title: string;
+  description: string;
+  imageUrl: string;
+  buttons?: {
+    type: 'quick_reply' | 'url' | 'phone' | 'flow';
+    text: string;
+    value?: string;
+  }[];
+}
+
 export interface Template {
   id: string;
   name: string;
@@ -50,7 +71,7 @@ export interface Template {
   updatedAt: string;
   language: string;
   media?: {
-    type: 'image' | 'video' | 'document';
+    type: 'image' | 'video' | 'document' | 'location';
     url: string;
   };
   buttons?: {
@@ -64,4 +85,8 @@ export interface Template {
     algorithm: 'best_selling' | 'recently_viewed' | 'recommended_for_you';
     count: number;
   };
+  carouselItems?: CarouselItem[];
+  languages?: string[];
+  triggerKeywords?: string[];
+  useCase?: string;
 }
