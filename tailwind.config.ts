@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				secondary: ['Roboto', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -69,8 +73,11 @@ export default {
 					bg: '#075E54',
 				},
 				netcore: {
-					primary: '#FF7A00',
-					secondary: '#0049B2'
+					primary: '#00A859',     // Netcore Green
+					'primary-hover': '#007A47', // Darker shade for hover
+					dark: '#1F3C43',       // Netcore Dark
+					light: '#E4F4F4',      // Netcore Light
+					accent: '#FF6F61',     // Accent Color
 				}
 			},
 			borderRadius: {
