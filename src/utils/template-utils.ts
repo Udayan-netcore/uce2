@@ -97,13 +97,20 @@ export const TEMPLATE_TYPE_LABELS: Record<Template['type'], string> = {
   catalogue: 'Catalogue',
   'multi-product': 'Multi-Product',
   'order-details': 'Order Details',
-  'order-status': 'Order Status'
+  'order-status': 'Order Status',
+  location: 'Location',
+  'multi-language': 'Multi-Language',
+  interactive: 'Interactive',
+  sequential: 'Sequential'
 };
 
 export const VARIABLE_TYPE_LABELS: Record<VariableType, string> = {
   user_attribute: 'User Attribute',
   payload_param: 'Payload Parameter',
-  product_property: 'Product Property'
+  product_property: 'Product Property',
+  event_data: 'Event Data',
+  order_data: 'Order Data',
+  location_data: 'Location Data'
 };
 
 export const TEMPLATE_EXAMPLES: Record<Template['type'], string> = {
@@ -113,7 +120,11 @@ export const TEMPLATE_EXAMPLES: Record<Template['type'], string> = {
   catalogue: "Browse our catalogue for items similar to {{product_name}}.",
   'multi-product': "Here are some products that pair well with {{purchased_product}}.",
   'order-details': "Your order {{order_id}} contains: {{product_list}}. Total: {{order_total}}.",
-  'order-status': "Order status update: Your order {{order_id}} is now {{order_status}}."
+  'order-status': "Order status update: Your order {{order_id}} is now {{order_status}}.",
+  location: "Our nearest store to you is located at: {{store_address}}",
+  'multi-language': "How can we assist you today? / कैसे मदद कर सकते हैं?",
+  interactive: "Please select an option to proceed further.",
+  sequential: "Welcome to our step-by-step guide. Let's get started!"
 };
 
 export const SAMPLE_TEMPLATES: Template[] = [

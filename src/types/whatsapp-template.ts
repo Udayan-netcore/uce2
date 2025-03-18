@@ -59,6 +59,13 @@ export interface CarouselItem {
   }[];
 }
 
+export interface ProductRecommendation {
+  algorithm: 'best_selling' | 'recently_viewed' | 'recommended_for_you' | 'top_sellers' | 'new_arrivals' | 'trending' | 'frequently_bought_together' | 'similar_products';
+  source: string;
+  count: number;
+  fallbackAlgorithm?: string;
+}
+
 export interface Template {
   id: string;
   name: string;
@@ -82,7 +89,7 @@ export interface Template {
   productRecommendation?: {
     enabled: boolean;
     source: string;
-    algorithm: 'best_selling' | 'recently_viewed' | 'recommended_for_you';
+    algorithm: 'best_selling' | 'recently_viewed' | 'recommended_for_you' | 'top_sellers' | 'new_arrivals' | 'trending' | 'frequently_bought_together' | 'similar_products';
     count: number;
   };
   carouselItems?: CarouselItem[];

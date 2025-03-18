@@ -2,7 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+ 
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -10,129 +10,189 @@
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
+ 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 221 83% 53%;
+ 
+    --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
+ 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
+ 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
+ 
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
+ 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 221 83% 53%;
-
+    --ring: 222.2 84% 4.9%;
+ 
     --radius: 0.5rem;
-
-    --sidebar-background: 222 47% 19%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 221 83% 53%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 217 33% 17%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 216 34% 17%;
-    --sidebar-ring: 221 83% 53%;
   }
-
+ 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
+ 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
+ 
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 217.2 91.2% 59.8%;
+ 
+    --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
+ 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
+ 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
+ 
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
+ 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
+ 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
-
+ 
 @layer base {
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
   }
 }
 
-.whatsapp-template-variable {
-  @apply bg-blue-100 text-blue-800 px-2 py-0.5 rounded-md font-medium inline-flex items-center gap-1;
-  border: 1px dashed theme('colors.blue.400');
-}
-
+/* WhatsApp Preview Styles */
 .whatsapp-phone-frame {
-  @apply relative border-8 border-black rounded-[2rem] overflow-hidden shadow-xl;
-  width: 280px;
+  width: 100%;
+  max-width: 320px;
   height: 560px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 8px solid #222222;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .whatsapp-chat-header {
-  @apply flex items-center justify-between p-2 bg-whatsapp-bg text-white;
+  background-color: #008069;
+  color: white;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .whatsapp-chat-body {
-  @apply p-3 h-full overflow-y-auto;
-  background-color: #e5ded8;
-  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  height: calc(100% - 60px);
+  background-color: #e5ddd5;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b2b2b2' fill-opacity='0.07'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  padding: 16px 8px 60px;
+  overflow-y: auto;
+  position: relative;
 }
 
 .whatsapp-message {
-  @apply p-2 rounded-lg mb-2 max-w-[80%] relative;
-}
-
-.whatsapp-message-received {
-  @apply bg-white ml-0 mr-auto;
-  border-radius: 0.5rem 0.5rem 0.5rem 0;
+  max-width: 85%;
+  margin-bottom: 12px;
+  clear: both;
+  position: relative;
 }
 
 .whatsapp-message-sent {
-  @apply bg-[#e1ffc7] ml-auto mr-0;
-  border-radius: 0.5rem 0.5rem 0 0.5rem;
+  float: right;
+  margin-left: 40px;
 }
 
-.whatsapp-template-container {
-  @apply border border-gray-200 rounded-md p-3 mb-4 bg-white;
+.whatsapp-message-content {
+  background-color: #dcf8c6;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
+.whatsapp-message-sent .whatsapp-message-content {
+  background-color: #dcf8c6;
+}
+
+.whatsapp-message-received .whatsapp-message-content {
+  background-color: #ffffff;
+}
+
+.whatsapp-message-content:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid #dcf8c6;
+  border-right: 8px solid transparent;
+}
+
+/* Variable Menu Styles */
 .variable-menu {
-  @apply absolute z-50 bg-white shadow-lg rounded-md border border-gray-200 p-2 w-64;
+  position: fixed;
+  z-index: 50;
+  width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Additional styles for the template editor */
+.aspect-w-1 {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.aspect-w-16 {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.aspect-h-9, .aspect-h-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.over-limit {
+  color: #ef4444;
 }
 
 .character-counter {
-  @apply text-xs text-right mt-1 text-gray-500;
+  font-size: 0.75rem;
+  text-align: right;
+  margin-top: 0.25rem;
+  color: #6b7280;
 }
 
 .character-counter.over-limit {
-  @apply text-red-500 font-medium;
+  color: #ef4444;
 }
+

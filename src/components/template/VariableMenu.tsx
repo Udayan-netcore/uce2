@@ -43,6 +43,33 @@ const COMMON_VARIABLES: Record<VariableType, string[]> = {
     'discount_percentage',
     'availability',
     'category'
+  ],
+  event_data: [
+    'event_name',
+    'event_date',
+    'event_time',
+    'event_location',
+    'event_duration',
+    'event_speaker',
+    'event_topic'
+  ],
+  order_data: [
+    'order_id',
+    'order_date',
+    'order_status',
+    'order_total',
+    'delivery_date',
+    'shipping_method',
+    'payment_method'
+  ],
+  location_data: [
+    'store_name',
+    'store_address',
+    'store_city',
+    'store_phone',
+    'store_hours',
+    'distance',
+    'coordinates'
   ]
 };
 
@@ -122,10 +149,13 @@ export default function VariableMenu({
         onValueChange={(value) => onChangeType(value as VariableType)}
         className="w-full"
       >
-        <TabsList className="w-full mb-2">
+        <TabsList className="w-full mb-2 flex flex-wrap">
           <TabsTrigger value="user_attribute" className="flex-1">User</TabsTrigger>
           <TabsTrigger value="payload_param" className="flex-1">Payload</TabsTrigger>
           <TabsTrigger value="product_property" className="flex-1">Product</TabsTrigger>
+          <TabsTrigger value="event_data" className="flex-1">Event</TabsTrigger>
+          <TabsTrigger value="order_data" className="flex-1">Order</TabsTrigger>
+          <TabsTrigger value="location_data" className="flex-1">Location</TabsTrigger>
         </TabsList>
         
         {(Object.keys(COMMON_VARIABLES) as VariableType[]).map((type) => (
@@ -136,7 +166,13 @@ export default function VariableMenu({
                   ? 'User attributes like name, email, etc.'
                   : type === 'payload_param'
                   ? 'Parameters passed in the payload'
-                  : 'Product-specific properties'}
+                  : type === 'product_property'
+                  ? 'Product-specific properties'
+                  : type === 'event_data'
+                  ? 'Event-related data like date, time, etc.'
+                  : type === 'order_data'
+                  ? 'Order details like ID, status, etc.'
+                  : 'Location information like store details, etc.'}
               </p>
               
               <div className="grid grid-cols-1 gap-1 max-h-[180px] overflow-y-auto">
