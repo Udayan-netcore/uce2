@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				whatsapp: {
+					light: '#25D366',
+					dark: '#128C7E',
+					bg: '#075E54',
+				},
+				netcore: {
+					primary: '#FF7A00',
+					secondary: '#0049B2'
 				}
 			},
 			borderRadius: {
